@@ -22,12 +22,10 @@ margin-top: 100px;
 .sectionleft{
     float: left;
     width: 70%;
-    border-style: dotted;
 }
 .sectionright{
     float:right;
     width: 20%;
-    border-style: dotted;
 }
 .amountofcheesetext{
     font-size: 27px;
