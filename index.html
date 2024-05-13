@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://kit.fontawesome.com/3b5bd90d10.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1> Cheese Clicker</h1>
+
+<div class="sectionleft">
+
+<p class="amountofcheesetext">Cheese:<span id="Cheese"> 0</span></p>
+
+<img src="cheese block.png" alt="" class="CheeseBlock" onclick="AddToScore(clickingpower)" draggable="false"> 
+</div>
+<div class="sectionright">
+    <div class="clickerupgrades">
+        <h1>Clicking Power Upgrades</h1>
+    <button onclick="buyClickingPower()"><i class="fa-solid fa-hand-pointer"></i><span id="clickingpowercost"></span><span id="clickingpowerlevel"></span></button>
+
+    </div>
+<div class="upgrades">
+
+    <h1>Upgrades</h1>
+    <div class="autoclickerdivupgrade"><button onclick="buyAutoClicker()">Auto-Clicker [<span id="autoclickercost">10</span>] -- <span id="autoclickers"> 0</span></button></div>
+    <br>
+    <div class="workerdivupgrade"><button onclick="buySlaves()">Workers [<span id="slavecost">100</span>] -- <span id="slaves"> 0</span></button></div>
+    <br>
+    <div class="Robotdivupgrade"></div><button onclick="buyRobots()">Robots [<span id="robotcost">1000</span>] -- <span id="robots"> 0</span></button>
+
+</div>
+</div>
+
+<script src="script.js">
+</script>
+</body>
+</html>

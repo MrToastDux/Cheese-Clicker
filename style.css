@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(29, 48, 48);
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+.CheeseBlock{
+    height: 250px;
+    
+}
+.upgrades{
+margin-top: 100px;
+}
+.CheeseBlock:hover{
+    cursor: pointer;
+}
+.CheeseBlock:active{
+    transform: scale(1.05);
+}
+.sectionleft{
+    float: left;
+    width: 70%;
+    border-style: dotted;
+}
+.sectionright{
+    float:right;
+    width: 20%;
+    border-style: dotted;
+}
+.amountofcheesetext{
+    font-size: 27px;
+    letter-spacing: 1.2px;
+}
+h1{
+    text-decoration: underline;
+}
