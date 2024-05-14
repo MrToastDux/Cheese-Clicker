@@ -1,4 +1,4 @@
-var Cheese = 0;
+var Cheese = 10000;
 var autoclickercost = 10;
 var autoclickers = 0;
 var slavecost = 100;
