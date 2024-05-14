@@ -65,7 +65,7 @@ function buyClickingPower(){
         Cheese = Cheese - clickingpowercost;
         clickingpowerlevel = clickingpowerlevel + 1;
         clickingpower = clickingpower * 2;
-        clickingpowercost = Math.round(clickingpowercost * 1);
+        clickingpowercost = Math.round(clickingpowercost * 1.5);
         document.getElementById("clickingpowercost").innerHTML = clickingpowercost;
         document.getElementById("clickingpowerlevel").innerHTML = clickingpowerlevel;
     }
