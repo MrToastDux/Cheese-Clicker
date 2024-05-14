@@ -19,14 +19,11 @@ body{
 .CheeseBlock:active{
     transform: scale(1.05);
 }
-.sectionmiddle{
+.Cheese{
     width: 30%;
     margin: auto;
 }
-.sectionright{
-    float:right;
-    width: 20%;
-}
+
 .amountofcheesetext{
     font-size: 27px;
     letter-spacing: 1.2px;
@@ -34,14 +31,15 @@ body{
 h1{
     text-decoration: underline;
 }
-.upgrades{
-    text-align: center;
-    width: 20%;
-    float: left;
-}
+
 button:hover{
 cursor: pointer;
 }
-.everyone{
-    display: flex;
+.leftsection{
+    float: left;
+    width: 59%;
+}
+.shop{
+    float: right;
+    width: 40%;
 }
