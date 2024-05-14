@@ -7,7 +7,7 @@ var robots = 0;
 var robotcost = 1000;
 var grandfathers = 0;
 var grandfathercost = 10000;
-var clickingpower = 1000;
+var clickingpower = 1;
 var clickingpowercost = 10000;
 var clickingpowerlevel = 1;
 
@@ -27,7 +27,7 @@ function buyAutoClicker(){
     }
 }
 setInterval (function(){
-    Cheese = Cheese + autoclickers *1;
+    Cheese = Cheese + autoclickers *1000;
     document.getElementById("Cheese").innerHTML = Cheese;
 }, 5000);
 
