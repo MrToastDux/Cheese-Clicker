@@ -27,7 +27,7 @@ function buyAutoClicker(){
     }
 }
 setInterval (function(){
-    Cheese = Cheese + autoclickers *1000;
+    Cheese = Cheese + autoclickers *1;
     document.getElementById("Cheese").innerHTML = Cheese;
 }, 5000);
 
