@@ -7,7 +7,7 @@ var robots = 0;
 var robotcost = 1000;
 var grandfathers = 0;
 var grandfathercost = 10000;
-var clickingpower = 1;
+var clickingpower = 1000;
 var clickingpowercost = 10000;
 var clickingpowerlevel = 1;
 
