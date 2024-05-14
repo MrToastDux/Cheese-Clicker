@@ -1,3 +1,4 @@
+
 var Cheese = 0;
 var autoclickercost = 10;
 var autoclickers = 0;
@@ -46,7 +47,6 @@ setInterval (function(){
     Cheese = Cheese + autoclickers *autoclickerpower;
     document.getElementById("Cheese").innerHTML = Cheese;
 }, 5000);
-
 function buyAutoclickerpower(){
     if (Cheese >= autoclickerpowercost && autoclickers>=10){
         autoclickerpower = autoclickerpower * 2;
@@ -140,7 +140,7 @@ function buyGrandfather(){
     }
 }
 setInterval (function(){
-    Cheese = Cheese + grandfathers * grandfatherspower;
+    Cheese = Cheese + grandfathers * grandfatherpower;
     document.getElementById("Cheese").innerHTML = Cheese;
     document.title = Cheese + "Cheese -- Clicker game"
 }, 1000);
