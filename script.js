@@ -69,7 +69,7 @@ function buyGrandfathers(){
         grandfathercost = Math.round(grandfathercost * 1.1);
         document.getElementById("Cheese").innerHTML = Cheese;
         document.getElementById("Grandfathers").innerHTML = grandfathers;
-        document.getElementById("Grandfatherscost").innerHTML = grandfathercost;
+        document.getElementById("Grandfathercost").innerHTML = grandfathercost;
     }
 }
 setInterval (function(){
