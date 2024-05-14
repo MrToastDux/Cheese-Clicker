@@ -31,7 +31,10 @@ body{
 h1{
     text-decoration: underline;
 }
-
+button{
+color:#000000;
+border-radius:1px;
+}
 button:hover{
 cursor: pointer;
 }
