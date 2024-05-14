@@ -6,7 +6,7 @@ var slaves = 0;
 var robots = 0;
 var robotcost = 1000;
 var clickingpower = 1;
-var clickingpowercost = 100;
+var clickingpowercost = 10000;
 var clickingpowerlevel = 1;
 
 
