@@ -62,7 +62,7 @@ setInterval (function(){
     document.title = Cheese + "Cheese -- Clicker game"
 }, 1000);
 
-function buyGrandfathers(){
+function buyGrandfather(){
     if (Cheese >= grandfathercost){
         Cheese = Cheese - grandfathercost;
         grandfathers = grandfathers + 1;
