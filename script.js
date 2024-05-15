@@ -76,6 +76,7 @@ function resetgame(){
 }
 window.onload= function(){
 loadgame();
+updatecps();
 document.getElementById("clickingpowercost").innerHTML = clickingpowercost;
 document.getElementById("clickingpowerlevel").innerHTML = clickingpowerlevel;
 document.getElementById("Ricottas").innerHTML = Ricottas;
@@ -275,7 +276,7 @@ function buyClickingPower(){
     }
 }
 function updatecps(){
-    cps = (autoclickers * autoclickerpower)+(slaves*slavespower)+(robots*robotpower)+(grandfathers*grandfatherpower)+(Ricottas*ricottapower);
+    cps = ((autoclickers * autoclickerpower)/10)+((slaves*slavespower)/4)+(robots*robotpower)+(grandfathers*grandfatherpower)+((Ricottas*ricottapower)/2);
     document.getElementById('cps').innerHTML = cps;
 }
 setInterval(function(){
