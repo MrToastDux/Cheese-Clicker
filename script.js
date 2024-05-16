@@ -67,12 +67,13 @@ function loadgame(){
     if (typeof savedGame.ricottapowercost !== "undefined") ricottapowercost = savedGame.ricottapowercost;
     if (typeof savedGame.ricottapowerlevel !== "undefined") ricottapowerlevel = savedGame.ricottapowerlevel;
 }
-function resetgame(){{
+function resetgame(){
+    if (confirm("Are You Sure You Want To Reset Your Progress?"))
         var gamesave = {};
         localStorage.setItem("gamesave", JSON.stringify(gamesave));
         location.reload();
     }
-}
+
 window.onload= function(){
 loadgame();
 updatecps();
@@ -112,7 +113,7 @@ var grandfathers = 0;
 var grandfathercost = 10000;
 var Ricottas = 0;
 var Ricottacost = 50000;
-var clickingpower = 1000;
+var clickingpower = 1;
 var clickingpowercost = 10000;
 var clickingpowerlevel = 1;
 var autoclickerpower = 1;
