@@ -10,14 +10,14 @@
     <h1> Cheese Clicker</h1>
     <button onclick="resetgame()">Reset Game</button>
     <div class="leftsection">
-<p class="amountofcheesetext">Cheese:<span id="Cheese"> 0</span></p>
-<p class="cps">Cheese per Second: <span id="cps">0</span></p>
-<img src="cheese block.png" alt="" class="CheeseBlock" onclick="AddToScore(clickingpower)" draggable="false"> 
+<div class="cheesetextcontainer"><p class="amountofcheesetext">Cheese:<span id="Cheese"> 0</span></p>
+<p class="cps">Cheese per Second: <span id="cps">0</span></p></div>
+<div class="Cheeseblockcontainer"><img src="cheese block.png" alt="" class="CheeseBlock" onclick="AddToScore(clickingpower)" draggable="false"> </div>
 </div>
 </div>
     <div class="shop">
     <div class="upgrades">
-    <h1>Upgrades</h1>
+    <h2>Upgrades</h2>
     <div class="autoclickerdivupgrade"><button onclick="buyAutoClicker()"> Cheese Cutter Conveyor [<span id="autoclickercost">10</span>] -- <span id="autoclickers"> 0</span></button></div>
     <br>
     <div class="workerdivupgrade"><button onclick="buySlaves()">Provolone Production Line [<span id="slavecost">100</span>] -- <span id="slaves"> 0</span></button></div>
@@ -30,7 +30,7 @@
     <br>
      </div> 
     <div class="clickerupgrades">   
-    <h1>Clicking Power Upgrades</h1>
+    <h2>Clicking Power Upgrades</h2>
     <div class="clickingpowerupgrade"><button onclick="buyClickingPower()">Clicking Power [<span id="clickingpowercost">10000</span>] -- Level<span id="clickingpowerlevel">1</span></button></div>
     <br>
    <div class="autoclickingpowerupgrade"> <button onclick="buyAutoclickerpower()"> Cheese Cutter Conveyor Power [<span id="autoclickerpowercost">20000</span>] -- Level<span id="autoclickerpowerlevel">1</span></button></div>

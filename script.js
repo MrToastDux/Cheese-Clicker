@@ -67,8 +67,7 @@ function loadgame(){
     if (typeof savedGame.ricottapowercost !== "undefined") ricottapowercost = savedGame.ricottapowercost;
     if (typeof savedGame.ricottapowerlevel !== "undefined") ricottapowerlevel = savedGame.ricottapowerlevel;
 }
-function resetgame(){
-    if(confirm("are you sure")){
+function resetgame(){{
         var gamesave = {};
         localStorage.setItem("gamesave", JSON.stringify(gamesave));
         location.reload();
@@ -113,7 +112,7 @@ var grandfathers = 0;
 var grandfathercost = 10000;
 var Ricottas = 0;
 var Ricottacost = 50000;
-var clickingpower = 1;
+var clickingpower = 1000;
 var clickingpowercost = 10000;
 var clickingpowerlevel = 1;
 var autoclickerpower = 1;
@@ -131,6 +130,11 @@ var grandfatherpowerlevel = 1;
 var ricottapower = 500;
 var ricottapowercost = 500000;
 var ricottapowerlevel = 1;
+var autoclickerpowerrequirements = 10;
+var slavespowerrequirements = 10;
+var robotpowerrequirements = 10;
+var grandfatherpowerrequirements = 10;
+var ricottapowerrequirements = 10;
 
 function AddToScore(amount){
     Cheese = Cheese + amount;
@@ -140,7 +144,7 @@ function buyAutoClicker(){
     if (Cheese >= autoclickercost){
         Cheese = Cheese - autoclickercost;
         autoclickers = autoclickers + 1;
-        autoclickercost = Math.round(autoclickercost * 1.1);
+        autoclickercost = Math.round(autoclickercost * 1.15);
         document.getElementById("Cheese").innerHTML = Cheese;
         document.getElementById("autoclickers").innerHTML = autoclickers;
         document.getElementById("autoclickercost").innerHTML = autoclickercost;
@@ -150,62 +154,12 @@ setInterval (function(){
     Cheese = Cheese + autoclickers *autoclickerpower;
     document.getElementById("Cheese").innerHTML = Cheese;
 }, 5000);
-function buyAutoclickerpower(){
-    if (Cheese >= autoclickerpowercost && autoclickers>=10){
-        autoclickerpower = autoclickerpower * 2;
-        Cheese = Cheese - autoclickerpowercost;
-        autoclickerpowercost = Math.round(autoclickerpowercost * 4)
-        autoclickerpowerlevel = autoclickerpowerlevel + 1;
-        document.getElementById('autoclickerpowercost').innerHTML = autoclickerpowercost;
-        document.getElementById('autoclickerpowerlevel').innerHTML = autoclickerpowerlevel;
-    }
-}
-function buyslavespower(){
-    if (Cheese >= slavespowercost && slaves>=10){
-        slavespower = slavespower * 2;
-        Cheese = Cheese - slavespowercost;
-        slavespowercost = Math.round(slavespowercost * 4)
-        slavespowerlevel = slavespowerlevel + 1;
-        document.getElementById('slavespowercost').innerHTML = slavespowercost;
-        document.getElementById('slavespowerlevel').innerHTML = slavespowerlevel;
-    }
-}
-function buyrobotpower(){
-    if (Cheese >= robotpowercost && robots>=10){
-        robotpower = robotpower * 2;
-        Cheese = Cheese - robotpowercost;
-        robotpowercost = Math.round(robotpowercost * 4)
-        robotpowerlevel = robotpowerlevel + 1;
-        document.getElementById('robotpowercost').innerHTML = robotpowercost;
-        document.getElementById('robotpowerlevel').innerHTML = robotpowerlevel;
-    }
-}
-function buygrandfatherpower(){
-    if (Cheese >= grandfatherpowercost && grandfathers>=10){
-        grandfatherpower = grandfatherpower * 2;
-        Cheese = Cheese - grandfatherpowercost;
-        grandfatherpowercost = Math.round(grandfatherpowercost * 4)
-        grandfatherpowerlevel = grandfatherpowerlevel + 1;
-        document.getElementById('grandfatherpowercost').innerHTML = grandfatherpowercost;
-        document.getElementById('grandfatherpowerlevel').innerHTML = grandfatherpowerlevel;
-    }
-}
-function buyricottapower(){
-    if (Cheese >= ricottapowercost && Ricottas>=10){
-        ricottapower = ricottapower * 2;
-        Cheese = Cheese - ricottapowercost;
-        ricottapowercost = Math.round(ricottapowercost * 4)
-        ricottapowerlevel = ricottapowerlevel + 1;
-        document.getElementById('ricottapowercost').innerHTML = ricottapowercost;
-        document.getElementById('ricottapowerlevel').innerHTML = ricottapowerlevel;
-    }
-}
 
 function buySlaves(){
     if (Cheese >= slavecost){
         Cheese = Cheese - slavecost;
         slaves = slaves + 1;
-        slavecost = Math.round(slavecost * 1.1);
+        slavecost = Math.round(slavecost * 1.15);
         document.getElementById("Cheese").innerHTML = Cheese;
         document.getElementById("slaves").innerHTML = slaves;
         document.getElementById("slavecost").innerHTML = slavecost;
@@ -220,7 +174,7 @@ function buyRobots(){
     if (Cheese >= robotcost){
         Cheese = Cheese - robotcost;
         robots = robots + 1;
-        robotcost = Math.round(robotcost * 1.1);
+        robotcost = Math.round(robotcost * 1.15);
         document.getElementById("Cheese").innerHTML = Cheese;
         document.getElementById("robots").innerHTML = robots;
         document.getElementById("robotcost").innerHTML = robotcost;
@@ -236,7 +190,7 @@ function buyGrandfather(){
     if (Cheese >= grandfathercost){
         Cheese = Cheese - grandfathercost;
         grandfathers = grandfathers + 1;
-        grandfathercost = Math.round(grandfathercost * 1.1);
+        grandfathercost = Math.round(grandfathercost * 1.15);
         document.getElementById("Cheese").innerHTML = Cheese;
         document.getElementById("Grandfathers").innerHTML = grandfathers;
         document.getElementById("Grandfathercost").innerHTML = grandfathercost;
@@ -252,7 +206,7 @@ function buyRicotta(){
     if (Cheese >= Ricottacost){
         Cheese = Cheese - Ricottacost;
         Ricottas = Ricottas + 1;
-        Ricottacost = Math.round(Ricottacost * 1.1);
+        Ricottacost = Math.round(Ricottacost * 1.15);
         document.getElementById("Cheese").innerHTML = Cheese;
         document.getElementById("Ricottas").innerHTML = Ricottas;
         document.getElementById("Ricottacost").innerHTML = Ricottacost;
@@ -270,9 +224,64 @@ function buyClickingPower(){
         Cheese = Cheese - clickingpowercost;
         clickingpowerlevel = clickingpowerlevel + 1;
         clickingpower = clickingpower * 2;
-        clickingpowercost = Math.round(clickingpowercost * 1.5);
+        clickingpowercost = Math.round(clickingpowercost * 3);
         document.getElementById("clickingpowercost").innerHTML = clickingpowercost;
         document.getElementById("clickingpowerlevel").innerHTML = clickingpowerlevel;
+    }
+}
+function buyAutoclickerpower(){
+    if (Cheese >= autoclickerpowercost && autoclickers>=autoclickerpowerrequirements){
+        autoclickerpower = autoclickerpower * 2;
+        Cheese = Cheese - autoclickerpowercost;
+        autoclickerpowercost = Math.round(autoclickerpowercost * 4)
+        autoclickerpowerlevel = autoclickerpowerlevel + 1;
+        autoclickerpowerrequirements =autoclickerpowerrequirements + 10;
+        document.getElementById('autoclickerpowercost').innerHTML = autoclickerpowercost;
+        document.getElementById('autoclickerpowerlevel').innerHTML = autoclickerpowerlevel;
+    }
+}
+function buyslavespower(){
+    if (Cheese >= slavespowercost && slaves>=slavespowerrequirements){
+        slavespower = slavespower * 2;
+        Cheese = Cheese - slavespowercost;
+        slavespowercost = Math.round(slavespowercost * 4)
+        slavespowerlevel = slavespowerlevel + 1;
+        slavespowerrequirements = slavespowerrequirements + 10;
+        document.getElementById('slavespowercost').innerHTML = slavespowercost;
+        document.getElementById('slavespowerlevel').innerHTML = slavespowerlevel;
+    }
+}
+function buyrobotpower(){
+    if (Cheese >= robotpowercost && robots>=robotpowerrequirements){
+        robotpower = robotpower * 2;
+        Cheese = Cheese - robotpowercost;
+        robotpowercost = Math.round(robotpowercost * 4)
+        robotpowerlevel = robotpowerlevel + 1;
+        robotpowerrequirements = robotpowerrequirements + 10;
+        document.getElementById('robotpowercost').innerHTML = robotpowercost;
+        document.getElementById('robotpowerlevel').innerHTML = robotpowerlevel;
+    }
+}
+function buygrandfatherpower(){
+    if (Cheese >= grandfatherpowercost && grandfathers>=grandfatherpowerrequirements){
+        grandfatherpower = grandfatherpower * 2;
+        Cheese = Cheese - grandfatherpowercost;
+        grandfatherpowercost = Math.round(grandfatherpowercost * 4)
+        grandfatherpowerlevel = grandfatherpowerlevel + 1;
+        grandfatherpowerrequirements = grandfatherpowerrequirements + 10;
+        document.getElementById('grandfatherpowercost').innerHTML = grandfatherpowercost;
+        document.getElementById('grandfatherpowerlevel').innerHTML = grandfatherpowerlevel;
+    }
+}
+function buyricottapower(){
+    if (Cheese >= ricottapowercost && Ricottas>=ricottapowerrequirements){
+        ricottapower = ricottapower * 2;
+        Cheese = Cheese - ricottapowercost;
+        ricottapowercost = Math.round(ricottapowercost * 4)
+        ricottapowerlevel = ricottapowerlevel + 1;
+        ricottapowerrequirements = ricottapowerrequirements + 10;
+        document.getElementById('ricottapowercost').innerHTML = ricottapowercost;
+        document.getElementById('ricottapowerlevel').innerHTML = ricottapowerlevel;
     }
 }
 function updatecps(){
