@@ -292,3 +292,7 @@ function updatecps(){
 setInterval(function(){
     updatecps();
 }, 100);
+function RuinTheFun(){
+    Cheese = Cheese + 9999999999999999999999999999999999999999999999999999999999999999999999;
+    document.getElementById("Cheese").innerHTML = Cheese;
+}
