@@ -68,10 +68,10 @@ function loadgame(){
     if (typeof savedGame.ricottapowerlevel !== "undefined") ricottapowerlevel = savedGame.ricottapowerlevel;
 }
 function resetgame(){
-    if (confirm("Are You Sure You Want To Reset Your Progress?"))
+    if (confirm("Are You Sure You Want To Reset Your Progress?")){
         var gamesave = {};
         localStorage.setItem("gamesave", JSON.stringify(gamesave));
-        location.reload();
+        location.reload();}
     }
 
 window.onload= function(){
