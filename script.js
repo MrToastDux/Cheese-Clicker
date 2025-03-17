@@ -286,7 +286,7 @@ function buyricottapower(){
     }
 }
 function updatecps(){
-    cps = ((autoclickers * autoclickerpower)/10)+((slaves*slavespower)/4)+(robots*robotpower)+(grandfathers*grandfatherpower)+((Ricottas*ricottapower)/2);
+    cps = ((autoclickers * autoclickerpower)/10)+((slaves*slavespower)/4)+(robots*robotpower)+(grandfathers*grandfatherpower)+((Ricottas*ricottapower));
     document.getElementById('cps').innerHTML = cps;
 }
 setInterval(function(){
